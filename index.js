@@ -78,14 +78,25 @@ app.post('/upload-file', requireSignedIn, upload.single('file'),function(req, re
 });
 
 app.post('/search', function(req, res){
-	const searchFor = req.body.title;
-	Work.findAll({ where: { title: { $iLike: '%' + searchFor + '%'}}
-		}).then(function(works){
-			console.log(works);
+	const category = req.body.category;
+	if(category == "title"){
+		const searchFor = req.body.key;
+		Work.findAll({ where: { title: { $iLike: '%' + searchFor + '%'}}
+			}).then(function(works){
 			res.render('search.html', {
 				works: works
 			});
 		});
+	}
+	if(category == "field"){
+		const searchFor = req.body.key;
+		Work.findAll({ where: { field: { $iLike: '%' + searchFor + '%'}}
+			}).then(function(works){
+			res.render('search.html', {
+				works: works
+			});
+		});
+	}
 });
 
 app.get('/search', function(req, res){

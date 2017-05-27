@@ -32,8 +32,7 @@ router.post('/signup', function(req, res){
 			database.transaction(function(transac){
 				return User.create({
 					student_id: student_id,
-					first_name: first_name,
-					last_name: last_name,
+					name: name,
 					email: email,
 					password: hashedPassword,
 					salt: salt
