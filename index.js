@@ -77,13 +77,25 @@ app.post('/upload-file', requireSignedIn, upload.single('file'),function(req, re
 	});
 });
 
-app.get('/listing', function(req, res){
-	Work.findAll().then(function(works){
-		res.render('list.html', {
-		works: works
+app.post('/search', function(req, res){
+	const searchFor = req.body.title;
+	Work.findAll({ where: { title: { $iLike: '%' + searchFor + '%'}}
+		}).then(function(works){
+			console.log(works);
+			res.render('search.html', {
+				works: works
+			});
 		});
-	});
 });
+
+app.get('/search', function(req, res){
+	res.render('search.html');
+})
+
+app.get('/listing', function(req, res){
+	
+});
+
 
 app.get('/file/:id', function(req, res){
 	const work_id = req.params.id;

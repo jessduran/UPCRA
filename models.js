@@ -43,6 +43,12 @@ const Work = database.define('works', {
 	},
 	file: {
 		type: Sequelize.STRING
+	},
+	field: {
+		type: Sequelize.STRING
+	},
+	abstract: {
+		type: Sequelize.STRING
 	}
 }, {
 	timestamps: true
