@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 	<title>UPCRA Sign Up</title>
 	<link rel="stylesheet" type="text/css" href="/static/css/bootstrap.css">
-	<link rel="stylesheet" type="text/css" href="/static/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="/static/css/custom.css">
 	<link rel="stylesheet" type="text/css" href="/static/css/index.css">
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
@@ -24,7 +24,9 @@
 	  <!-- .container-fluid -->
 	  	<div class="main-content">
 			<form action="/signup" method="post" name="signup">
-				<h2 class="text-center">SIGN UP</h2>
+				<div class="title-row">
+					<h2 class="text-center">SIGN UP</h2>
+				</div>
 				<label for="first_name">First Name</label>
 				<input type="text" name="first_name"> <br>
 

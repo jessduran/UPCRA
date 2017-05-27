@@ -1,25 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-	<link rel="stylesheet" type="text/css" href="css/custom.css">
+
+	<title>UPCRA - Advanced Search</title>
+	<link rel="stylesheet" type="text/css" href="../static/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../static/css/custom.css">
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-	<script src="js/jquery-3.2.1.min.js"></script>
-	<script src="js/custom.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="../static/js/custom.js"></script>
+	<script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-dropdown.js"></script>
 
 	<style>
 		body {font-family: 'Open Sans', sans-serif}
 	</style>
 </head>
 
-<body>
+<body class="searchbody">
 
-<div class="page-header">
   <h1>Advanced Search</h1>
-</div>
 
+	<form class="form-inline" role="form">
+			<div class="form-group">
+		        <input class="form-control" type="text" />
+		    </div>
+
+		    <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+		    <br>
+			
+			<div class="form-group">
+				<label class="custom-control custom-checkbox">
+					<input type="checkbox" class="custom-control-input">
+					<span class="custom-control-indicator"></span>
+					<span class="custom-control-description">Topic</span>
+				</label>
+				<div class="form-group">
+			        <input class="form-control" type="text" />
+			    </div>
+
+			    <br>
+				<label class="custom-control custom-checkbox">
+					<input type="checkbox" class="custom-control-input">
+					<span class="custom-control-indicator"></span>
+					<span class="custom-control-description">Year</span>
+				</label>
+				<div class="form-group">
+			        <input class="form-control" type="text" />
+			    </div>
+
+				<br>
+				<label class="custom-control custom-checkbox">
+					<input type="checkbox" class="custom-control-input">
+					<span class="custom-control-indicator"></span>
+					<span class="custom-control-description">Course</span>
+				</label>
+				<div class="form-group">
+			        <input class="form-control" type="text" />
+			    </div>
+
+			    <br>
+				<label class="custom-control custom-checkbox">
+					<input type="checkbox" class="custom-control-input">
+					<span class="custom-control-indicator"></span>
+					<span class="custom-control-description">Field</span>
+				</label>
+				<div class="form-group">
+			        <input class="form-control" type="text" />
+			    </div>
+			    
+				<br>
+				<label class="custom-control custom-checkbox">
+					<input type="checkbox" class="custom-control-input">
+					<span class="custom-control-indicator"></span>
+					<span class="custom-control-description">Author</span>
+				</label>
+				<div class="form-group">
+			        <input class="form-control" type="text" />
+			    </div>
+				
+		    </div>
+			
+		    
+	    
+	</form>
 
 
 
