@@ -8,8 +8,7 @@
 	<h1>{{ user.email }}</h1>
 
 	{% for work in works %}
-		<h3> {{ work.work_id }} </h3>
-		<h2> {{ work.Work.title }} </h2>
+		<h3><a href="/file/{{ work.id }}">{{ work.work_id }}</a>  </h3>
 	{% endfor %}
 </body>
 </html>
