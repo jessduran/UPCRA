@@ -24,7 +24,7 @@
 	</form>
 	{% for work in works %}
 		{% if work.name != null %} 
-		<p>Author: {{ work.name }}</p>
+		<p>Author: <a href="/author/{{ work.id }}">{{ work.name }}</a></p>
 		{% else %}
 		<p>Title: {{ work.title }}</p>
 		<p>Field: {{ work.field }}</p><br>

@@ -62,6 +62,7 @@ router.post('/signin', function(req, res){
 
 			req.flash('statusMessage', 'Signed in successfully!');
 			req.session.currentUser = user.email;
+			req.session.cookie.maxAge = 1000 * 60 * 60;
 
 			if(remember) {
 				req.session.cookie.maxAge = 1000 * 60 * 60;
@@ -70,6 +71,11 @@ router.post('/signin', function(req, res){
 			var name = user.id;
 			res.redirect('/profile');
 	});
-})
+});
+
+router.get('/signout', function(req, res){
+	req.session.destroy();
+	res.redirect('/');
+});
 
 module.exports = router;
