@@ -1,0 +1,43 @@
+body{
+	font-family: 'Open Sans', sans-serif;
+}
+
+img {
+	width: 100%;
+	height: auto;
+}
+
+
+#content {
+	height: 100%;
+	background-color: #791a1a;
+	color: #fff;
+}
+
+#signup {
+	padding: 30px;
+}
+
+
+/* CLASSES */
+
+.main-content {
+	padding: 30px;
+}
+
+.sign-in {
+	float: right;
+}
+
+.title-row {
+	border-bottom: 2px solid #6caee0;
+}
+
+.content-just {
+	padding: 70px;
+	width: 600px;
+}
+
+.content-just .form-control{
+	width: 80%;
+}
