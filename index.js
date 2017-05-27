@@ -61,7 +61,9 @@ app.post('/upload-file', requireSignedIn, upload.single('file'),function(req, re
 			return Work.create({
 				title: title,
 				date: date,
-				file: '/files/' + req.file.filename
+				file: '/files/' + req.file.filename,
+				field: field,
+				abstract: abstract
 			}, {transaction: transc}).then(function(
 				work){
 				return PublishedWork.create({
@@ -97,6 +99,15 @@ app.post('/search', function(req, res){
 			});
 		});
 	}
+	if(category == "author"){
+		const searchFor = req.body.key;
+		User.findAll({ where: { name: { $iLike: '%' + searchFor + '%'}}
+			}).then(function(works){
+			res.render('search.html', {
+				works: works
+			});
+		});
+	}
 });
 
 app.get('/search', function(req, res){
@@ -104,7 +115,11 @@ app.get('/search', function(req, res){
 })
 
 app.get('/listing', function(req, res){
-	
+	Work.findAll().then(function(works){
+		res.render('list.html', {
+			works: works
+		});
+	});
 });
 
 
