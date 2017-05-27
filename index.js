@@ -54,6 +54,8 @@ app.post('/upload-file', requireSignedIn, upload.single('file'),function(req, re
 	const email = req.session.currentUser;
 	const title = req.body.title;
 	const date = req.body.date;
+	const field = req.body.field;
+	const abstract = req.body.abstract;
 
 	User.findOne({ where: { email: email } }).then(function(user){
 		const user_id = user.id;
