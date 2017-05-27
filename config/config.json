@@ -1,0 +1,6 @@
+{
+  "development": {
+    "url": "postgres://webeng:webeng@localhost:5432/research_archive",
+    "dialect": "pg"
+  }
+}
