@@ -14,6 +14,10 @@ img {
 	color: #fff;
 }
 
+#logo .shadow {
+	width: 300px;
+}
+
 #signup {
 	padding: 30px;
 }
@@ -40,4 +44,26 @@ img {
 
 .content-just .form-control{
 	width: 80%;
+}
+@media(max-width: 1093px){
+  #sign-up .form-inline .form-control{
+    width: 122px;
+    border-radius: 0px;
+    margin: 0px;
+  }
+}
+@media (max-width: 840px){
+	#sign-in .form-inline .form-control {
+		width: 160px;
+		border-radius: 0px;
+		margin: 0px;
+	}
+}
+
+@media (min-width: 768px) {
+  #sign-in .form-inline .form-control {
+    width: 120px;
+    margin: 0px;
+    border-radius: 0px;
+  }
 }
