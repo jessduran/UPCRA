@@ -1,25 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-	<link rel="stylesheet" type="text/css" href="css/custom.css">
+
+	<title>UPCRA - Search</title>
+	<link rel="stylesheet" type="text/css" href="../static/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="../static/css/custom.css">
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-	<script src="js/jquery-3.2.1.min.js"></script>
-	<script src="js/custom.js"></script>
+	<script src="../static/js/jquery-3.2.1.min.js"></script>
+	<script src="../static/js/custom.js"></script>
+	<script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-dropdown.js"></script>
 
 	<style>
 		body {font-family: 'Open Sans', sans-serif}
 	</style>
 </head>
 
-<body>
+<body class="searchbody">
 
-<div class="page-header ">
   <h1>Basic Search</h1>
-</div>
 
+<div class="row">
+  <div class="col-lg-6">
+    <div class="input-group">
+      <div class="input-group-btn">
+      	<div class="dropdown">
+	        <button type="button" class="btn btn-default dropdown-toggle" id="dropdown1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	        Action 
+	        <span class="caret"></span>
+	        </button>
+	        <ul class="dropdown-menu" aria-labelledby="dropdown1">
+	          <li><a href="#">Action</a></li>
+	          <li><a href="#">Another action</a></li>
+	          <li><a href="#">Something else here</a></li>
+	          <li><a href="#">Separated link</a></li>
+	        </ul>
+        </div>
+      </div><!-- /btn-group -->
+      <input type="text" class="form-control" aria-label="...">
+      <span class="input-group-btn">
+        <button class="btn btn-default" type="button">Search</button>
+      </span>
+    </div><!-- /input-group -->
+  </div><!-- /.col-lg-6 -->
+</div><!-- /.row -->
 
 
 
