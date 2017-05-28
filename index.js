@@ -25,7 +25,7 @@ app.use('/files', express.static('./uploads'));
 app.use(require('./auth-routes'));
 
 app.get('/', function(req, res){
-	res.render('index.html');
+	res.render('home.html');
 });
 
 app.get('/profile', requireSignedIn, function(req, res){
