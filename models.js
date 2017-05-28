@@ -55,7 +55,7 @@ const PublishedWork = database.define('publishedworks', {
 		primaryKey: true,
 		autoIncrement: true,
 		allowNull: false
-	}, 
+	},
 	user_id: {
 		type: Sequelize.INTEGER,
 		references: {

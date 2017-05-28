@@ -25,7 +25,7 @@ app.use('/files', express.static('./uploads'));
 app.use(require('./auth-routes'));
 
 app.get('/', function(req, res){
-	res.render('home.html');
+	res.render('index.html');
 });
 
 app.get('/basic-search', function(req, res){

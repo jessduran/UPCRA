@@ -51,6 +51,19 @@
 {% endfor %}
 </div>
 
+<table class="table" id="resultsTable">
+	<tbody>
+		<tr>
+			<td width="90%">
+			<div class="resultItem">
+				 <h4><b>{{ work.title }}</b></h4>
+				 <p>{{ work.name }}</p>
+			</div>
+			</td>
+		<td width="10%"><button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Preview</button></td>
+		</tr>
+	</tbody>
+</table>
 
 </body>
 </html>
