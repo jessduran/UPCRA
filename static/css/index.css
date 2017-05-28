@@ -1,0 +1,101 @@
+body{
+	font-family: 'Open Sans', sans-serif;
+}
+
+img {
+	width: 100%;
+	height: auto;
+}
+
+
+#content {
+	height: 100%;
+	background-color: #791a1a;
+	color: #fff;
+}
+
+#logo .shadow {
+	width: 300px;
+}
+
+#signup {
+	padding: 30px;
+}
+
+
+/* CLASSES */
+
+.main-content {
+	padding: 30px;
+	width: 60%;
+	margin: auto;
+	background-color: lavender;
+}
+
+.sign-in {
+	float: right;
+}
+
+.input {
+	padding: 5px;
+	width: 300px;
+}
+
+.title-row hr {
+	border-bottom: 2px solid #6caee0;
+	width: 200px;
+}
+
+.content-just {
+	padding: 70px;
+	width: 600px;
+}
+
+.content-just .form-control{
+	width: 70%;
+}
+
+.input-design {
+	padding: 5px;
+}
+
+
+.logo-dash {
+	width: 60%;
+	margin: auto;
+}
+
+/* OVERRIDES */
+.container-fluid {
+	margin-bottom: 20px;
+}
+
+.text-center .btn {
+	margin-top: 30px;
+}
+
+
+@media(max-width: 1093px){
+  #sign-up .form-inline .form-control{
+    width: 122px;
+    border-radius: 0px;
+    margin: 0px;
+  }
+}
+@media (max-width: 840px){
+	#sign-in .form-inline .form-control {
+		width: 160px;
+		border-radius: 0px;
+		margin: 0px;
+	}
+
+
+}
+
+@media (min-width: 768px) {
+  #sign-in .form-inline .form-control {
+    width: 120px;
+    margin: 0px;
+    border-radius: 0px;
+  }
+}
