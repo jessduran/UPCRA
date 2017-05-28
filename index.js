@@ -28,6 +28,7 @@ app.get('/', function(req, res){
 	res.render('index.html');
 });
 
+
 app.get('/sign-up', function(req, res){
 	res.render('sign-up.html');
 });
@@ -91,7 +92,7 @@ app.post('/search', function(req, res){
 		const searchFor = req.body.key;
 		Work.findAll({ where: { title: { $iLike: '%' + searchFor + '%'}}
 			}).then(function(works){
-			res.render('search.html', {
+			res.render('basicsearch.html', {
 				works: works
 			});
 		});
@@ -100,7 +101,7 @@ app.post('/search', function(req, res){
 		const searchFor = req.body.key;
 		Work.findAll({ where: { field: { $iLike: '%' + searchFor + '%'}}
 			}).then(function(works){
-			res.render('search.html', {
+			res.render('basicsearch.html', {
 				works: works
 			});
 		});
@@ -109,7 +110,7 @@ app.post('/search', function(req, res){
 		const searchFor = req.body.key;
 		User.findAll({ where: { name: { $iLike: '%' + searchFor + '%'}}
 			}).then(function(works){
-			res.render('search.html', {
+			res.render('basicsearch.html', {
 				works: works
 			});
 		});
@@ -117,7 +118,7 @@ app.post('/search', function(req, res){
 });
 
 app.get('/search', function(req, res){
-	res.render('search.html');
+	res.render('basicsearch.html');
 })
 
 app.get('/listing', function(req, res){

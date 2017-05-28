@@ -23,7 +23,12 @@
 		<button>Search</button>
 	</form>
 	{% for work in works %}
-		<p>{{ work.title }}</p>
+		{% if work.name != null %}
+		<p>Author: {{ work.name }}</p>
+		{% else %}
+		<p>Title: {{ work.title }}</p>
+		<p>Field: {{ work.field }}</p><br>
+		{% endif %}
 	{% endfor %}
 </body>
 </html>

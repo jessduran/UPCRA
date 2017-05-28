@@ -26,34 +26,33 @@
 <div class="row">
 
 
-<form class="form-inline" role="form">
+<form class="form-inline" role="form"  action="/upload-file" method="post" enctype="multipart/form-data">
 
 		<div class="uploadcontainer">
-			
 			<div class="input-group file-cation-main">
 				<input type="file" name="input1" class="file">
 			</div>
 		</div>
 		<div class="form-group">
-	        <input class="form-control" type="text" placeholder="Title" />
+	        <input class="form-control" type="text" name="title" placeholder="Title" />
 	    </div>
 	    <div class="form-group">
-	        <input class="form-control" type="text" placeholder="Author" />
+	        <input class="form-control" type="text" name="file" placeholder="" />
 	    </div>
 	    <div class="form-group">
-	        <input class="form-control" type="text" placeholder="Date" />
+	        <input class="form-control" type="text" name ="date" placeholder="Date" />
 	    </div>
 	    <div class="form-group">
-	        <input class="form-control" type="text" placeholder="Field" />
+	        <input class="form-control" type="text" name="field" placeholder="Field" />
 	    </div>
 	    <div class="form-group">
-	        <input class="form-control" type="text" placeholder="Abstract" />
+	        <input class="form-control" type="text" name="abstract" placeholder="Abstract" />
 	    </div>
-	    
+
     <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-cloud-upload"></span></button>
 </form>
 </div>
-                                      
+
 
 
 
