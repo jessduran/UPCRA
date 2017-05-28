@@ -82,6 +82,23 @@ app.post('/upload-file', requireSignedIn, upload.single('file'),function(req, re
 	});
 });
 
+app.get('/sendMail', function (req, res, next) {
+  app.mailer.send('email', {
+    to: 'maharlikaalberca@gmail.com',
+    subject: 'Test Email',
+    otherProperty: 'Other Property'
+  }, function (err) {
+    if (err) {
+      // handle error
+      console.log(err);
+      res.send('There was an error sending the email');
+      return;
+    }
+    res.send('Email Sent');
+  });
+});
+
+
 function requireSignedIn(req, res, next) {
     if (!req.session.currentUser) {
         return res.redirect('/');

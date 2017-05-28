@@ -11,6 +11,7 @@
     "database": "0.0.2",
     "express": "^4.15.3",
     "express-flash": "0.0.2",
+    "express-mailer": "^0.3.1",
     "express-session": "^1.15.3",
     "multer": "^1.3.0",
     "nunjucks": "^3.0.1",
