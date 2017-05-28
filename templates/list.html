@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	{% for work in works %}
+		<a href="/file/{{ work.id }}">{{ work.title }}</a><br>
+	{% endfor %}
+</body>
+</html>

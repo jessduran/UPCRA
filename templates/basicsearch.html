@@ -28,10 +28,10 @@
 <form class="form-inline" role="form">
 		<div class="form-group">
 	            <select class="form-control">
-	                <option value="topic" selected>All</option>
-	                <option value="course">Course</option>
-	                <option value="field">Field</option>
-	                <option value="author">Author</option>
+	                <option value="all" name="category" selected>All</option>
+	                <option value="author" name="category">Author</option>
+	                <option value="title" name="category" >Title</option>
+	                <option value="field" name="category">Field</option>
 	            </select>
 	    </div>
 		<div class="form-group">
@@ -40,6 +40,15 @@
 
     <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
 </form>
+
+{% for work in works %}
+	{% if work.name != null %}
+	<p>Author: {{ work.name }}</p>
+	{% else %}
+	<p>Title: {{ work.title }}</p>
+	<p>Field: {{ work.field }}</p><br>
+	{% endif %}
+{% endfor %}
 </div>
 
 

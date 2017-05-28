@@ -1,18 +1,34 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
-    <form class="" action="/search-work" method="post">
-      <input type="text" name="searchFor" value="">
-      <input type="radio" name="author" value="Author">Author</input>
-      <input type="radio" name="title" value="Title">Title</input>
-      <input type="radio" name="course" value="Course">Course</input>
-      <button type="button" name="button">Search</button>
+<head>
+	<title>Search</title>
+</head>
+<body>
+	<form action='/search' method="post">
+		<label for="search">Search</label>
+		<input type="text" name="key"><br>
 
-      {{for }}
-    </form>
-  </body>
+		<label for="all">All</label>
+		<input type="radio" value="all" name="category">
+
+		<label for="author">Author</label>
+		<input type="radio" value="author" name="category">
+
+		<label for="title">Title</label>
+		<input type="radio" value="title" name="category">
+
+		<label for="field">Field</label>
+		<input type="radio" value="field" name="category">
+
+		<button>Search</button>
+	</form>
+	{% for work in works %}
+		{% if work.name != null %}
+		<p>Author: {{ work.name }}</p>
+		{% else %}
+		<p>Title: {{ work.title }}</p>
+		<p>Field: {{ work.field }}</p><br>
+		{% endif %}
+	{% endfor %}
+</body>
 </html>
