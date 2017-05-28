@@ -28,11 +28,9 @@ app.get('/', function(req, res){
 	res.render('index.html');
 });
 
-
 app.get('/sign-up', function(req, res){
 	res.render('sign-up.html');
 });
-
 app.get('/profile', requireSignedIn, function(req, res){
 	const email = req.session.currentUser;
 	User.findOne({ where: { email: email } }).then(function(user) {
@@ -41,7 +39,6 @@ app.get('/profile', requireSignedIn, function(req, res){
 		});
 	});
 });
-
 const storage = multer.diskStorage({
 	destination: function(req, file, cb){
 		cb(null, './uploads');
@@ -53,8 +50,6 @@ const storage = multer.diskStorage({
 	}
 });
 const upload = multer({ storage: storage });
-
-
 app.post('/upload-file', requireSignedIn, upload.single('file'),function(req, res){
 	const email = req.session.currentUser;
 	const title = req.body.title;
@@ -85,7 +80,6 @@ app.post('/upload-file', requireSignedIn, upload.single('file'),function(req, re
 		return res.redirect('/profile');
 	});
 });
-
 app.post('/search', function(req, res){
 	const category = req.body.category;
 	if(category == "title"){
@@ -119,7 +113,6 @@ app.post('/search', function(req, res){
 app.get('/search', function(req, res){
 	res.render('basicsearch.html');
 })
-
 app.get('/listing', function(req, res){
 	Work.findAll().then(function(works){
 		res.render('list.html', {
@@ -127,7 +120,6 @@ app.get('/listing', function(req, res){
 		});
 	});
 });
-
 app.get('/file/:id', function(req, res){
 	const work_id = req.params.id;
 
@@ -144,12 +136,9 @@ app.get('/file/:id', function(req, res){
 
 	});
 });
-
 app.get('/author/:id', function(req, res){
 	const author_id = req.params.id;
-
 PublishedWork.belongsTo(Work, {foreignKey: 'id'});
-
 	User.findOne({ where: { id: author_id }}).then(function(user){
 		PublishedWork.findAll({ where: {user_id : author_id}}).then(function(works){
 				res.render('author.html', {
@@ -159,7 +148,6 @@ PublishedWork.belongsTo(Work, {foreignKey: 'id'});
 		});
 	});
 });
-
 function requireSignedIn(req, res, next) {
     if (!req.session.currentUser) {
         return res.redirect('/');

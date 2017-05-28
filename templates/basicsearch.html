@@ -9,6 +9,10 @@
 	<link rel="stylesheet" type="text/css" href="/static/css/custom.css">
 	<link rel="stylesheet" type="text/css" href="/static/css/index.css">
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="/static/js/custom.js"></script>
+	<script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-dropdown.js"></script>
 </head>
 </head>
 <body>
@@ -83,6 +87,26 @@
 			{% endfor %}
 		</tbody>
 	</table>
+
+	<div id="myModal" class="modal fade" role="dialog">
+	  <div class="modal-dialog">
+
+	    <!-- Modal content-->
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal">&times;</button>
+	        <h4 class="modal-title">Abstract</h4>
+	      </div>
+	      <div class="modal-body">
+	        <p> {{ works.id.abstract }} </p>
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	      </div>
+	    </div>
+
+	  </div>
+	</div>
 
   </div>
 
