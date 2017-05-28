@@ -6,7 +6,7 @@ const PublishedWork = require('./models').PublishedWork;
 const database = require('./database');
 const router = new express.Router();
 
-router.post('/sign-up', function(req, res){
+router.post('/signup', function(req, res){
 	const student_id = req.body.student_id;
 	const name = req.body.name;
 	const email = req.body.email;
