@@ -51,14 +51,9 @@ const upload = multer({ storage: storage });
 
 
 app.post('/upload-file', requireSignedIn, upload.single('file'),function(req, res){
-	console.log(req.body);
-	console.log(req.file);
-
 	const email = req.session.currentUser;
 	const title = req.body.title;
 	const date = req.body.date;
-
-	console.log(email, title, date);
 
 	User.findOne({ where: { email: email } }).then(function(user){
 		const user_id = user.id;
@@ -98,6 +93,30 @@ app.get('/sendMail', function (req, res, next) {
   });
 });
 
+app.get('/listing', function(req, res){
+	Work.findAll().then(function(works){
+		res.render('list.html', {
+		works: works
+		});
+	});
+});
+
+app.get('/file/:id', function(req, res){
+	const work_id = req.params.id;
+
+	PublishedWork.findOne({ where: {work_id: work_id} }).then(function(file){
+		const user = file.user_id;
+		User.findOne({ where: { id: file.user_id }}).then(function(user){
+			Work.findOne({ where: { id: file.work_id }}).then(function(file){
+				res.render('file.html', {
+					file: file,
+					user: user
+				});
+			});
+		});
+
+	});
+});
 
 function requireSignedIn(req, res, next) {
     if (!req.session.currentUser) {
