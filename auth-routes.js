@@ -8,8 +8,7 @@ const router = new express.Router();
 
 router.post('/signup', function(req, res){
 	const student_id = req.body.student_id;
-	const first_name = req.body.first_name;
-	const last_name = req.body.last_name;
+	const name = req.body.name;
 	const email = req.body.email;
 	const password = req.body.password;
 	const confirm_password = req.body.confirm_password;
@@ -32,8 +31,7 @@ router.post('/signup', function(req, res){
 			database.transaction(function(transac){
 				return User.create({
 					student_id: student_id,
-					first_name: first_name,
-					last_name: last_name,
+					name: name,
 					email: email,
 					password: hashedPassword,
 					salt: salt

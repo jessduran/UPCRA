@@ -54,6 +54,8 @@ app.post('/upload-file', requireSignedIn, upload.single('file'),function(req, re
 	const email = req.session.currentUser;
 	const title = req.body.title;
 	const date = req.body.date;
+	const field = req.body.field;
+	const abstract = req.body.abstract;
 
 	User.findOne({ where: { email: email } }).then(function(user){
 		const user_id = user.id;
@@ -61,7 +63,9 @@ app.post('/upload-file', requireSignedIn, upload.single('file'),function(req, re
 			return Work.create({
 				title: title,
 				date: date,
-				file: '/files/' + req.file.filename
+				file: '/files/' + req.file.filename,
+				field: field,
+				abstract: abstract
 			}, {transaction: transc}).then(function(
 				work){
 				return PublishedWork.create({
@@ -77,16 +81,47 @@ app.post('/upload-file', requireSignedIn, upload.single('file'),function(req, re
 	});
 });
 
+app.post('/search', function(req, res){
+	const category = req.body.category;
+	if(category == "title"){
+		const searchFor = req.body.key;
+		Work.findAll({ where: { title: { $iLike: '%' + searchFor + '%'}}
+			}).then(function(works){
+			res.render('search.html', {
+				works: works
+			});
+		});
+	}
+	if(category == "field"){
+		const searchFor = req.body.key;
+		Work.findAll({ where: { field: { $iLike: '%' + searchFor + '%'}}
+			}).then(function(works){
+			res.render('search.html', {
+				works: works
+			});
+		});
+	}
+	if(category == "author"){
+		const searchFor = req.body.key;
+		User.findAll({ where: { name: { $iLike: '%' + searchFor + '%'}}
+			}).then(function(works){
+			res.render('search.html', {
+				works: works
+			});
+		});
+	}
+});
+
+app.get('/search', function(req, res){
+	res.render('search.html');
+})
+
 app.get('/listing', function(req, res){
 	Work.findAll().then(function(works){
 		res.render('list.html', {
-		works: works
+			works: works
 		});
 	});
-});
-
-app.get('/search', function(req,res){
-	res.render('search.html');
 });
 
 app.get('/file/:id', function(req, res){
