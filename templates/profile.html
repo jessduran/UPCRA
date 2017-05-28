@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
 <head>
 	<title> Profile </title>
@@ -24,5 +24,65 @@
 		</div>
 		<button> Upload </button>
 	</form>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+	<title>UPCRA - Search</title>
+	<link rel="stylesheet" type="text/css" href="../static/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../static/css/custom.css">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="../static/js/custom.js"></script>
+	<script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-dropdown.js"></script>
+
+	<style>
+		body {font-family: 'Open Sans', sans-serif}
+	</style>
+</head>
+
+<body class="searchbody">
+
+<h1>Upload a File</h1>
+
+
+</div>
+<div class="row">
+
+
+<form class="form-inline" role="form"  action="/upload-file" method="post" enctype="multipart/form-data">
+
+		<div class="uploadcontainer">
+			<div class="input-group file-cation-main">
+				<input type="file" name="input1" class="file">
+			</div>
+		</div>
+		<div class="form-group">
+	        <input class="form-control" type="text" name="title" placeholder="Title" />
+	    </div>
+	    <div class="form-group">
+	        <input class="form-control" type="text" name="file" placeholder="" />
+	    </div>
+	    <div class="form-group">
+	        <input class="form-control" type="text" name ="date" placeholder="Date" />
+	    </div>
+	    <div class="form-group">
+	        <input class="form-control" type="text" name="field" placeholder="Field" />
+	    </div>
+	    <div class="form-group">
+	        <input class="form-control" type="text" name="abstract" placeholder="Abstract" />
+	    </div>
+
+    <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-cloud-upload"></span></button>
+</form>
+</div>
+
+
+
+
 </body>
 </html>
