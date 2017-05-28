@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<title>UPCRA Sign Up</title>
+	<link rel="stylesheet" type="text/css" href="/static/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/custom.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/index.css">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+</head>
+<body>
+	<div id="signup">
+		<div class="container-fluid">
+			<div class="col-md-offset-4 col-md-6 col-xs-6">
+			    <a href="/">
+			    	<img class="shadow" src="/static/img/logo.png">
+			    </a>
+			</div>
+
+	 	</div>
+	  <!-- .container-fluid -->
+	  	<div class="main-content">
+			<form action="/signup" method="post" name="signup">
+				<div class="title-row">
+					<h2 class="text-center">SIGN UP</h2>
+				</div>
+				<label for="first_name">First Name</label>
+				<input type="text" name="first_name"> <br>
+
+				<label for="last_name">Last Name</label>
+				<input type="text" name="last_name"><br>
+
+				<label for="email">Email</label>
+				<input type="text" name="email"><br>
+
+				<label for="password">Password</label>
+				<input type="password" name="password"><br>
+
+				<label for="confirm_password">Confirm Password</label>
+				<input type="password" name="confirm_password"><br>
+				<button>Sign up</button>
+			</form>
+		</div>
+	</div>
+	<!-- #signup -->
+
+	<br>
+	<br>
+	<!-- <form action="/signin" method="post" name="signin">
+		<label for="email">Email</label>
+		<input type="text" name="email"><br>
+
+		<label for="email">Password</label>
+		<input type="password" name="password"><br>
+
+		<button>Sign in</button>
+	</form> -->
+
+	<script type="text/javascript" src="/static/js/jquery.min.js"></script>
+	<script type="text/javascript" src="/static/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="/static/js/custom.js"></script>
+</body>
+</html> 
