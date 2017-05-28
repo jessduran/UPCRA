@@ -40,12 +40,13 @@
 	  		<li class="text-center"><p class="navbar-cat">ONLINE CATALOG</p></li>
 	   		<li class="text-center"><a id="basicSearch" onclick="load_bSearch()" href="/search">Basic Search</a></li>
 	   		<li class="text-center"><a id="advSearch" onclick="load_aSearch()" href="/listing">Listing</a></li>
-	   		<li class="text-center"><a id="newAquisition" href="#">New Aquisitions</a></li>
 	  	</ul>
 	</div>
-	<h1>{{ file.title }}</h1>
-	<h4>Date Published: {{ file.date }}</h4>
-	<h4>Author: {{ user.name }}</h4>
-	<h4>Email: {{ user.email }}</h4>
+	<div class="container">
+		<h1><b>Title: </b> {{ file.title }}</h1>
+		<h4>Date Published: {{ file.date }}</h4>
+		<h4>Author: {{ user.name }} </h4>
+		<h4>Email: {{ user.email }} </h4>
+	</div>
 </body>
 </html>

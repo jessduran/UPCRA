@@ -8,6 +8,7 @@
 	<title>UPCRA - Search</title>
 	<link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="/static/css/custom.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/index.css">
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -19,35 +20,55 @@
 	</style>
 </head>
 
-<body class="searchbody">
-<h1>Upload a File</h1>
-
-
-</div>
-<div class="row">
-<form class="form-inline" role="form"  action="/upload-file" method="post" enctype="multipart/form-data">
-
-		<div class="uploadcontainer">
-			<div class="input-group file-cation-main">
-				<input type="file" name="file" class="file">
+<body>
+	<div class="page-header">
+		<div class="container-fluid">
+			<div class="col-md-6 col-xs-6" id="logo">
+					<a href="/">
+						<img class="shadow" src="/static/img/logo.png">
+					</a>
 			</div>
+			<form class="" style="float: right" action="/signout" method="post">
+					<button type="submit" class="btn btn-default">SIGN OUT</button>
+			</form>
 		</div>
-		<div class="form-group">
-	        <input class="form-control" type="text" name="title" placeholder="Title" />
-	    </div>
-	    <div class="form-group">
-	        <input class="form-control" type="date" name ="date" placeholder="Date" />
-	    </div>
-	    <div class="form-group">
-	        <input class="form-control" type="text" name="field" placeholder="Field" />
-	    </div>
-	    <div class="form-group">
-	        <input class="form-control" type="text" name="abstract" placeholder="Abstract" />
-	    </div>
+	</div>
+	<div class="navbar navbar-default">
+			<ul class="nav navbar-nav">
+				<li class="text-center"><p class="navbar-cat">ONLINE CATALOG</p></li>
+				<li class="text-center"><a id="basicSearch" onclick="load_bSearch()" href="/search">Basic Search</a></li>
+				<li class="text-center"><a id="advSearch" onclick="load_aSearch()" href="/listing">Listing</a></li>
+			</ul>
+	</div>
+	<div class="container">
 
-    <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-cloud-upload"></span></button>
-</form>
-</div>
+		<h1>Upload your Work</h1>
+		<div class="row">
+			<form class="form-inline" role="form"  action="/upload-file" method="post" enctype="multipart/form-data">
 
+			<div class="uploadcontainer">
+				<div class="input-group file-cation-main">
+					<input type="file" name="file" class="file">
+				</div>
+			</div>
+			<div class="form-group">
+		        <input class="form-control" type="text" name="title" placeholder="Title" />
+		    </div>
+		    <div class="form-group">
+		        <input class="form-control" type="date" name ="date" placeholder="Date" />
+		    </div>
+		    <div class="form-group">
+		        <input class="form-control" type="text" name="field" placeholder="Field" />
+		    </div>
+		    <div class="form-group">
+		        <!-- <input class="form-control" type="text" name="abstract" placeholder="Abstract" /> -->
+						<textarea class="form-control" name="abstract" placeholder="Abstract" rows="8" cols="80"></textarea>
+		    </div>
+	    	<button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-cloud-upload"></span></button>
+			</form>
+		</div>
+
+
+	</div>
 </body>
 </html>

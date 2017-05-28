@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 	<title>UPCRA</title>
 	<link rel="stylesheet" type="text/css" href="/static/css/bootstrap.css">
-
 	<link rel="stylesheet" type="text/css" href="/static/css/custom.css">
 	<link rel="stylesheet" type="text/css" href="/static/css/index.css">
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
@@ -42,58 +41,50 @@
 	  		<li class="text-center"><p class="navbar-cat">ONLINE CATALOG</p></li>
 	   		<li class="text-center"><a id="basicSearch" onclick="load_bSearch()" href="/search">Basic Search</a></li>
 	   		<li class="text-center"><a id="advSearch" onclick="load_aSearch()" href="/listing">Listing</a></li>
-	   		<li class="text-center"><a id="newAquisition" href="#">New Aquisitions</a></li>
 	  	</ul>
 	</div>
 
-  <h1>Basic Search</h1>
+  <div class="container">
+		<h1>Basic Search</h1>
 
-<div class="row">
-<form class="form-inline" role="form" action="/search" method="post">
-		<div class="form-group">
-	            <select class="form-control" name="category">
-	                <!-- <option value="all" name="category" selected>All</option> -->
-	                <option value="author"  selected>Author</option>
-	                <option value="title" name="category" >Title</option>
-	                <option value="field" name="category">Field</option>
-	            </select>
-	    </div>
-		<div class="form-group">
-	        <input class="form-control" type="text" name="key" />
-	    </div>
+	<div class="row">
+	<form class="form-inline" role="form" action="/search" method="post">
+			<div class="form-group">
+		            <select class="form-control" name="category">
+		                <!-- <option value="all" name="category" selected>All</option> -->
+		                <option value="author"  selected>Author</option>
+		                <option value="title" name="category" >Title</option>
+		                <option value="field" name="category">Field</option>
+		            </select>
+		    </div>
+			<div class="form-group">
+		        <input class="form-control" type="text" name="key" />
+		    </div>
 
-    <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
-</form>
+	    <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+	</form>
 
-<!-- {% for work in works %}
-	{% if work.name != null %}
-	<p>Author: {{ work.name }}</p>
-	{% else %}
-	<p>Title: {{ work.title }}</p>
-	<p>Field: {{ work.field }}</p><br>
-	{% endif %}
-{% endfor %}
-</div> -->
+	<table class="table" id="resultsTable">
+		<tbody>
+			{%for work in works %}
+			<tr>
+				<td width="90%">
+				<div class="resultItem">
+					{% if work.name != null %}
+					<p><a href="/author/{{work.id}}">{{ work.name }}</a></p>
+					{% else %}
+					<h4><b>{{ work.title }}</b></h4>
+					{{ work.field }}
+					{% endif %}
+				</div>
+				</td>
+			<td width="10%"><button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Preview</button></td>
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
 
-<table class="table" id="resultsTable">
-	<tbody>
-		{%for work in works %}
-		<tr>
-			<td width="90%">
-			<div class="resultItem">
-				{% if work.name != null %}
-				<p><a href="#">{{ work.name }}</a></p>
-				{% else %}
-				<h4><b>{{ work.title }}</b></h4>
-				{{ work.field }}
-				{% endif %}
-			</div>
-			</td>
-		<td width="10%"><button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Preview</button></td>
-		</tr>
-		{% endfor %}
-	</tbody>
-</table>
+  </div>
 
 </body>
 </html>

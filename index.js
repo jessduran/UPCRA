@@ -116,7 +116,6 @@ app.post('/search', function(req, res){
 		});
 	}
 });
-
 app.get('/search', function(req, res){
 	res.render('basicsearch.html');
 })
@@ -143,6 +142,21 @@ app.get('/file/:id', function(req, res){
 			});
 		});
 
+	});
+});
+
+app.get('/author/:id', function(req, res){
+	const author_id = req.params.id;
+
+PublishedWork.belongsTo(Work, {foreignKey: 'id'});
+
+	User.findOne({ where: { id: author_id }}).then(function(user){
+		PublishedWork.findAll({ where: {user_id : author_id}}).then(function(works){
+				res.render('author.html', {
+					user: user,
+					works: works
+				});
+		});
 	});
 });
 

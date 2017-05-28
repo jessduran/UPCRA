@@ -6,7 +6,7 @@ const PublishedWork = require('./models').PublishedWork;
 const database = require('./database');
 const router = new express.Router();
 
-router.post('/signup', function(req, res){
+router.post('/sign-up', function(req, res){
 	const student_id = req.body.student_id;
 	const name = req.body.name;
 	const email = req.body.email;
@@ -62,6 +62,7 @@ router.post('/signin', function(req, res){
 
 			req.flash('statusMessage', 'Signed in successfully!');
 			req.session.currentUser = user.email;
+			req.session.cookie.maxAge = 1000 * 60 * 60;
 
 			if(remember) {
 				req.session.cookie.maxAge = 1000 * 60 * 60;
@@ -70,6 +71,11 @@ router.post('/signin', function(req, res){
 			var name = user.id;
 			res.redirect('/profile');
 	});
-})
+});
+
+router.get('/signout', function(req, res){
+	req.session.destroy();
+	res.redirect('/');
+});
 
 module.exports = router;
