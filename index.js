@@ -77,22 +77,6 @@ app.post('/upload-file', requireSignedIn, upload.single('file'),function(req, re
 	});
 });
 
-app.get('/sendMail', function (req, res, next) {
-  app.mailer.send('email', {
-    to: 'maharlikaalberca@gmail.com',
-    subject: 'Test Email',
-    otherProperty: 'Other Property'
-  }, function (err) {
-    if (err) {
-      // handle error
-      console.log(err);
-      res.send('There was an error sending the email');
-      return;
-    }
-    res.send('Email Sent');
-  });
-});
-
 app.get('/listing', function(req, res){
 	Work.findAll().then(function(works){
 		res.render('list.html', {
@@ -104,19 +88,6 @@ app.get('/listing', function(req, res){
 app.get('/search', function(req,res){
 	res.render('search.html');
 });
-//
-// app.post('/search-work', function(req,res){
-// 	const searchBy = req.body.optradio;
-// 	const searchThis = req.body.searchFor;
-// 	if(searchBy == 'Author'){
-// 		Users.findOne({ where: {searchFor: first_name} }).then(function(found_author){
-// 			PublishedWork.findAll({ where: {found_author.id : user_id} },
-// 				{transaction: t}).then(function(){
-// 					return res.redirect('/search');
-// 				});
-// 		});
-// 	}
-// });
 
 app.get('/file/:id', function(req, res){
 	const work_id = req.params.id;
