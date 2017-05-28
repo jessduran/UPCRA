@@ -28,6 +28,10 @@ app.get('/', function(req, res){
 	res.render('home.html');
 });
 
+app.get('/basic-search', function(req, res){
+	res.render('basicsearch.html');
+});
+
 app.get('/profile', requireSignedIn, function(req, res){
 	const email = req.session.currentUser;
 	User.findOne({ where: { email: email } }).then(function(user) {
