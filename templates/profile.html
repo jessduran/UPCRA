@@ -1,43 +1,17 @@
-<!-- <!DOCTYPE html>
-<html>
-<head>
-	<title> Profile </title>
-</head>
-<body>
-	<p> hello {{ user.id }}</p>
-	<form action="/upload-file" method="post" enctype="multipart/form-data">
-		<div>
-			<label for="file">Upload File</label>
-			<input type="file" name="file" id="file">
-
-			<label for="title">Title</label>
-			<input type="text" name="title" id="title">
-
-			<label for="year">Date</label>
-			<input type="date" name="date" id="date">
-
-			<label for="field">Field</label>
-			<input type="text" name="field" id="field">
-
-			<label for="abstract">Abstract</label>
-			<textarea name="abstract" id="abstract"></textarea>
-		</div>
-		<button> Upload </button>
-	</form>
-</body>
-</html> -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
 	<title>UPCRA - Search</title>
-	<link rel="stylesheet" type="text/css" href="../static/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="../static/css/custom.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/custom.css">
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<script src="../static/js/custom.js"></script>
+	<script src="/static/js/custom.js"></script>
 	<script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-dropdown.js"></script>
 
 	<style>
@@ -46,7 +20,16 @@
 </head>
 
 <body class="searchbody">
+	<!-- <div class="page-header">
+		<div class="container-fluid">
+			<div class="col-md-6 col-xs-6" id="logo">
+					<a href="/">
+						<img class="shadow" src="/static/img/logo.png">
+					</a>
+			</div>
+		</div>
 
+	</div> -->
 <h1>Upload a File</h1>
 
 
